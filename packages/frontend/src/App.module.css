@@ -1,0 +1,12 @@
+.app {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.workspace {
+  flex: auto;
+  width: 100%;
+  height: 100vh;
+  background-color: #24272d;
+}
