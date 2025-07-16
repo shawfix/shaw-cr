@@ -1,21 +1,41 @@
-import { useEffect, useState } from 'react';
+import type { ComponentType } from 'react';
+import type { MaterialIconProps } from './MaterialIconProps';
 
-import { fileIcons } from './fileIcons';
+import { lazy, useEffect, useState } from 'react';
 
-console.log('fileIcons', fileIcons);
+import { getFileIcons } from './fileIcons';
+import { getFolderIcons } from './folderIcons';
 
-const modules = import.meta.glob('./icons/**.svg');
+const iconModules = import.meta.glob('./icons/**.tsx');
 
-function MeterialFileIcon(): React.ReactNode {
-  const [imageSrc, setImageSrc] = useState<string>();
+function MeterialIcon({
+  name,
+  isFolder = false,
+  style,
+  ...rest
+}: MaterialIconProps): React.ReactNode {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [LazyIcon, setLazyIcon] = useState<React.LazyExoticComponent<ComponentType<any>>>();
+  const [materialIconColor, setMaterialIconColor] = useState<string>('');
+
+  console.log('filename', name);
+  console.log('isFolder', isFolder);
 
   useEffect(() => {
-    modules['./icons/3d.svg']().then((m) => {
-      setImageSrc((m as { default: string }).default);
-    });
-  }, []);
+    const icon = isFolder ? getFolderIcons(name) : getFileIcons(name);
+    const lazyLoader = () =>
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      iconModules[`./icons/${icon.name}.tsx`]() as Promise<{ default: ComponentType<any> }>;
 
-  return imageSrc ? <img src={imageSrc} alt="meterial-icon" /> : null;
+    setLazyIcon(lazy(lazyLoader));
+    setMaterialIconColor(icon.color);
+  }, [name, isFolder]);
+
+  return LazyIcon ? (
+    <LazyIcon style={{ ...style, '--material-icon-color': materialIconColor }} {...rest} />
+  ) : (
+    <></>
+  );
 }
 
-export default MeterialFileIcon;
+export default MeterialIcon;

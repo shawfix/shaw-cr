@@ -1,0 +1,18 @@
+import type { MaterialIconProps } from '../MaterialIconProps.ts';
+
+import Icon from '@ant-design/icons';
+
+function FolderUtilsSvg(): React.ReactNode {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="1em" height="1em">
+  <path fill="var(--material-icon-color, #7cb342)" d="m13.844 7.536-1.288-1.072A2 2 0 0 0 11.276 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2H15.124a2 2 0 0 1-1.28-.464"></path>
+  <path fill="var(--material-icon-color, #dcedc8)" d="M31 12H19a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V13a1 1 0 0 0-1-1m-1 8h-4v4h-2v-4h-4v-2h4v-4h2v4h4Z"></path>
+  <path fill="var(--material-icon-color, #dcedc8)" d="M16 28V16h-2v13a1 1 0 0 0 1 1h13v-2Z"></path>
+</svg>
+;
+};
+
+function FolderUtilsIcon(props: Partial<MaterialIconProps>): React.ReactNode {
+  return <Icon component={FolderUtilsSvg} {...props} />
+};
+
+export default FolderUtilsIcon;
