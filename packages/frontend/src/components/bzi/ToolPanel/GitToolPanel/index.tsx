@@ -18,6 +18,8 @@ const items: CollapseProps['items'] = [
         <MeterialIcon name="xx.tape" style={{ fontSize: '100px' }} />
         <MeterialIcon name="xx.tsx" />
         <MeterialIcon name="components" isFolder={true} />
+        <MeterialIcon name="test" isFolder={true} />
+        <MeterialIcon name="src" isFolder={true} />
         <MeterialIcon name="types" isFolder={true} />
         <MeterialIcon name="effects" isFolder={true} />
         {text}

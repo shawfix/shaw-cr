@@ -262,5 +262,5 @@ export function getColorByKey(key: string): string | void {
     return colorPalette[key as keyof typeof colorPalette];
   }
 
-  throw new Error(`Invalid color: ${baseColor}`);
+  throw new Error(`Invalid color: ${key}`);
 }
