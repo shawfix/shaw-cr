@@ -1,4 +1,4 @@
-export interface ToolD {
+export interface Tool {
   icon: React.ReactNode;
   name: string;
 }

@@ -2,14 +2,14 @@ import { ForkOutlined, GithubOutlined } from '@ant-design/icons';
 
 import { ToolNames } from './ToolNames';
 
-import type { ToolD } from '../models/ToolD';
+import type { Tool } from '../models/Tool';
 
-export const GitTool: ToolD = {
+export const GitTool: Tool = {
   icon: <GithubOutlined />,
   name: ToolNames.git,
 };
 
-export const ForkTool: ToolD = {
+export const ForkTool: Tool = {
   icon: <ForkOutlined />,
   name: ToolNames.fork,
 };

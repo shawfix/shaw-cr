@@ -12,7 +12,7 @@ const text = `
 const items: CollapseProps['items'] = [
   {
     key: '1',
-    label: 'CHANGES',
+    label: <span>Changes</span>,
     children: (
       <p>
         <MeterialIcon name="xx.tape" style={{ fontSize: '100px' }} />
