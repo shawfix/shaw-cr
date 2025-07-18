@@ -1,5 +1,5 @@
 import { Button } from 'antd';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import { ToolPanelMap } from '../../../constants/ToolPanelMap';
 import { ToolSpaceItems } from '../../../constants/ToolSpaceItems';
@@ -7,11 +7,11 @@ import { ToolSpaceItems } from '../../../constants/ToolSpaceItems';
 import styles from './index.module.css';
 
 function ToolSpace(): React.ReactNode {
-  const [activedTool, setActivedTool] = useState<string>('git');
+  const [activeTool, setActivedTool] = useState<string>('git');
 
-  const changeTool = function (tool: string): void {
+  const changeTool = useCallback((tool: string): void => {
     setActivedTool(tool);
-  };
+  }, []);
 
   return (
     <div className={styles['tool-space']}>
@@ -19,7 +19,7 @@ function ToolSpace(): React.ReactNode {
         {ToolSpaceItems.map((tool) => (
           <Button
             type="text"
-            className={`${styles['tool-icon']} ${activedTool === tool.name ? styles['tool-icon__actived'] : ''}`}
+            className={`${styles['tool-icon']} ${activeTool === tool.name ? styles['tool-icon__active'] : ''}`}
             key={tool.name}
             onClick={() => changeTool(tool.name)}
           >
@@ -28,9 +28,9 @@ function ToolSpace(): React.ReactNode {
         ))}
       </div>
       <div className={styles['tool-panel']}>
-        <div className={styles['tool-name']}>{activedTool}</div>
+        <div className={styles['tool-name']}>{activeTool}</div>
         <div className={styles['tool-container']}>
-          {ToolPanelMap[activedTool] ? ToolPanelMap[activedTool] : null}
+          {ToolPanelMap[activeTool] ? ToolPanelMap[activeTool] : null}
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@ import type { DefaultIcon } from '../defaultIcon';
 import type { IconPack } from '../iconPack';
 import type { LightSettingsWithCloneOptions } from '../lightSettings';
 import type { Patterns } from '../patterns/patterns';
-import type { RequireAtLeastOne } from '../../../../types/RequiredAtLeastOne';
+import type { RequireAtLeastOne } from '../../../../types/requiredAtLeastOne';
 
 type BasicFileIcon = DefaultIcon &
   LightSettingsWithCloneOptions & {

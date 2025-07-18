@@ -1,6 +1,7 @@
-import { ToolNames } from './ToolNames';
-import GitToolPanel from '../components/bzi/ToolPanel/GitToolPanel';
+import { Modules } from './Modules';
+
+import GitToolPanel from '../components/business/ToolPanel/GitToolPanel';
 
 export const ToolPanelMap = {
-  [ToolNames.git]: <GitToolPanel />,
+  [Modules.git]: <GitToolPanel />,
 };

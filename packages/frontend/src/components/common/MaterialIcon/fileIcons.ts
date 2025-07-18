@@ -8,7 +8,7 @@ import { IconPack } from './models/iconPack';
  */
 export const fileIcons: FileIcons = {
   defaultIcon: {
-    name: 'file',
+    name: 'File',
   },
   icons: [
     {
@@ -256,7 +256,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'Javascript',
-      fileExtensions: ['esx', 'mjs'],
+      fileExtensions: ['esx', 'js', 'mjs'],
       fileNames: [],
     },
     {

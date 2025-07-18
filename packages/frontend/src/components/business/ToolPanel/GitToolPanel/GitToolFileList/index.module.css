@@ -1,0 +1,59 @@
+.file-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button.file-item-container,
+button.file-item-container:focus,
+button.file-item-container:hover
+ {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  width: 100%;
+  font-size: 14px;
+  color: #acb2be;
+  cursor: pointer;
+}
+button.file-item-container:hover {
+  background-color: #41475380;
+}
+button.file-item-container:focus {
+  color: #d8dadf;
+  background-color: #41475380;
+  box-shadow: inset 0 0 0 1px #3f4451;
+}
+button.file-item-container__active {
+  background-color: #41475380;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  height: 22px;
+  border-left: 1.2px solid #3f4451;
+}
+
+.file-icon {
+  font-size: 14px;
+}
+
+.file-status-D,
+.file-status-M,
+.file-status-U {
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 600;
+}
+.file-status-D {
+  color: #93493b;
+}
+.file-status-M {
+  color: #ad9978;
+}
+.file-status-U {
+  color: #71a17f;
+}

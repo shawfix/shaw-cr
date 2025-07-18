@@ -18,11 +18,9 @@ function MeterialIcon({
   const [LazyIcon, setLazyIcon] = useState<React.LazyExoticComponent<ComponentType<any>>>();
   const [materialIconColor, setMaterialIconColor] = useState<string>('');
 
-  console.log('filename', name);
-  console.log('isFolder', isFolder);
-
   useEffect(() => {
     const icon = isFolder ? getFolderIcons(name) : getFileIcons(name);
+
     const lazyLoader = () =>
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       iconModules[`./icons/${icon.name}.tsx`]() as Promise<{ default: ComponentType<any> }>;

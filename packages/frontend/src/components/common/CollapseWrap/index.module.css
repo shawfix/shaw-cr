@@ -15,11 +15,6 @@
   color: #acb2be;
   background-color: #24272d;
   border-radius: 0;
-  border: 1.2px solid #24272d;
-}
-.collapse-wrap
-  :global(.ant-collapse .ant-collapse-item.ant-collapse-item-active .ant-collapse-header) {
-  border-color: #3f4451;
 }
 
 .collapse-wrap

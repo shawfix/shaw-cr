@@ -8,7 +8,7 @@ import { IconPack } from './models/iconPack';
  */
 export const folderIcons: FolderTypes = {
   defaultIcon: {
-    name: 'folder',
+    name: 'Folder',
   },
   icons: [
     {

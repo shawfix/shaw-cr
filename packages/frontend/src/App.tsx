@@ -1,5 +1,5 @@
 import styles from './App.module.css';
-import ToolSpace from './components/bzi/ToolSpace';
+import ToolSpace from './components/business/ToolSpace';
 
 function App() {
   return (

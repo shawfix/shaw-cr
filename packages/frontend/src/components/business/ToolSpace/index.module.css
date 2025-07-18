@@ -33,7 +33,7 @@
   border: none;
   outline: none;
 }
-.tool-space .tool-bar .tool-icon.tool-icon__actived::before {
+.tool-space .tool-bar .tool-icon.tool-icon__active::before {
   content: '';
   display: block;
   position: absolute;
@@ -44,7 +44,7 @@
   background-color: #fff;
 }
 .tool-space .tool-bar .tool-icon:hover,
-.tool-space .tool-bar .tool-icon.tool-icon__actived {
+.tool-space .tool-bar .tool-icon.tool-icon__active {
   color: #fff;
 }
 

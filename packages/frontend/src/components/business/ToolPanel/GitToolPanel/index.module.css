@@ -1,0 +1,8 @@
+.git-tool-panel :global(.ant-collapse .ant-collapse-item .ant-collapse-header) {
+  height: 22px;
+  font-size: 12px;
+  font-weight: 800;
+}
+.git-tool-panel :global(.ant-collapse .ant-collapse-item .ant-collapse-header:focus-within) {
+  box-shadow: inset 0 0 0 1px #3f4451;
+}
