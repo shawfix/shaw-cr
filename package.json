@@ -11,20 +11,25 @@
     "packages/*"
   ],
   "scripts": {
-    "dev:front": "npx vite",
-    "dev:back": "npx vite",
+    "dev:front": "cd ./packages/frontend && npm run dev",
+    "dev:back": "cd ./packages/backend && npm run start:dev",
     "changelog": "conventional-changelog -p custom-config -i CHANGELOG.md -s -r 0  -n ./changelog-option.cjs",
     "prepare": "npx husky install"
   },
   "dependencies": {
     "@ant-design/icons": "6.0.0",
     "@nestjs/cli": "11.0.7",
+    "@nestjs/common": "11.1.5",
+    "@nestjs/core": "11.1.5",
+    "@nestjs/platform-express": "11.1.5",
     "antd": "5.26.2",
     "antd-style": "3.7.1",
     "motion": "12.23.5",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-router": "7.6.2"
+    "react-router": "7.6.2",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2"
   },
   "devDependencies": {
     "@commitlint/cli": "19.4.0",
