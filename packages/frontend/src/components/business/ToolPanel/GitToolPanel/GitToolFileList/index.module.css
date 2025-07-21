@@ -31,20 +31,63 @@ button.file-item-container__active {
 .file-item {
   display: flex;
   align-items: center;
-  gap: 4px;
   width: 100%;
   height: 22px;
   border-left: 1.2px solid #3f4451;
 }
 
+.file-item-space {
+  margin-left: auto;
+  padding: 0 2px;
+  width: 0;
+  height: 0;
+}
+
 .file-icon {
+  margin-right: 4px;
   font-size: 14px;
+}
+
+.file-info {
+  flex: 1;
+  width: 0;
+  text-align: left;
+  overflow: hidden;
+  word-break: keep-all;
+  text-overflow: ellipsis;
+}
+
+.file-path {
+  margin-left: 4px;
+  font-size: 12px;
+  color: #868b96;
+}
+
+.file-operation {
+  display: none;
+  align-items: center;
+  margin-right: 4px;
+  height: 100%;
+  color: #d8dadf;
+}
+button.file-item-container__active .file-operation,
+button.file-item-container:hover .file-operation,
+button.file-item-container:focus .file-operation {
+  display: flex;
+}
+
+.file-operation button {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+}
+.file-operation button:hover {
+  background-color: #41475380;
+  border-radius: 4px;
 }
 
 .file-status-D,
 .file-status-M,
 .file-status-U {
-  margin-left: auto;
   font-size: 12px;
   font-weight: 600;
 }

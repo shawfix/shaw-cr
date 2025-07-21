@@ -1,5 +1,6 @@
 import type { FileInfo } from '../../../../../models/FileInfo';
 
+import { AlertOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 
 import MaterialIcon from '../../../../common/MaterialIcon';
@@ -23,7 +24,7 @@ function GitToolFileList(props: GitToolFileListProps): React.ReactNode {
 
   return (
     <ul className={styles['file-list']}>
-      {props.data.map(({ name, status }) => {
+      {props.data.map(({ name, relativePath, status }) => {
         return (
           <button
             key={name}
@@ -32,7 +33,16 @@ function GitToolFileList(props: GitToolFileListProps): React.ReactNode {
           >
             <div className={styles['file-item']}>
               <MaterialIcon className={styles['file-icon']} name={name} />
-              <span>{name}</span>
+              <span className={styles['file-info']}>
+                <span>{name}</span>
+                <span className={styles['file-path']}>{relativePath}</span>
+              </span>
+              <span className={styles['file-item-space']}></span>
+              <span className={styles['file-operation']}>
+                <button className="text-btn">
+                  <AlertOutlined />
+                </button>
+              </span>
               <span className={styles[`file-status-${status}`]}>{status}</span>
             </div>
           </button>
